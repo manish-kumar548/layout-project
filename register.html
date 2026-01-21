@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="card shadow">
+          <div class="card-body">
+            <h4 class="text-center mb-4">Register</h4>
+
+            <input id="rname" class="form-control mb-3" placeholder="Full Name">
+            <input id="remail" class="form-control mb-3" placeholder="Email">
+            <input id="rphone" class="form-control mb-3" placeholder="Mobile">
+            <input id="rpassword" type="password" class="form-control mb-3" placeholder="Password (min 4 characters)">
+
+
+
+            <button class="btn btn-success w-100" onclick="startRegister()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OTP BOX -->
+  <div id="otpBox" style="display:none; position:fixed; top:20px; left:50%; transform:translateX(-50%); z-index:999;">
+    <div class="card p-3 shadow">
+      <p><b>Demo OTP:</b> <span id="showOtp"></span></p>
+      <input id="otpInput" class="form-control mb-2" placeholder="Enter OTP">
+      <button class="btn btn-primary w-100" onclick="verifyOtp()">Verify OTP</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

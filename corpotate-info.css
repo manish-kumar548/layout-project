@@ -1,0 +1,86 @@
+body {
+  padding-top: 90px; 
+  background: #f5f7fb;
+}
+.statutory-section {
+  padding: 80px 8%;
+  background: #b779b2;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #0a3d62;
+  margin-bottom: 50px;
+}
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.pdf-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(42, 39, 39, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pdf-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #0a3d62, #1e90ff);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.pdf-card:hover::before {
+  opacity: 1;
+}
+
+.pdf-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.pdf-icon {
+  font-size: 42px;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.pdf-card:hover .pdf-icon {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.pdf-content {
+  z-index: 2;
+}
+
+.pdf-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0a3d62;
+  margin-bottom: 5px;
+}
+
+.pdf-content p {
+  font-size: 14px;
+  color: #555;
+}
+
+.pdf-card:hover h4,
+.pdf-card:hover p {
+  color: #fff;
+}
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portal Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h4 class="text-center mb-4">Portal Login</h4>
+
+          <input id="email" class="form-control mb-3" placeholder="Registered Email">
+          <input id="password" type="password" class="form-control mb-3" placeholder="Password">
+
+          <button class="btn btn-primary w-100" onclick="startLogin()">Login</button>
+
+          
+
+          <p class="mt-3 text-center">
+            New user? <a href="register.html">Register</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OTP POPUP -->
+<div id="otpBox" style="display:none; position:fixed; top:20px; left:50%; transform:translateX(-50%); z-index:999;">
+  <div class="card p-3 shadow">
+    <p><b>Demo OTP:</b> <span id="showOtp"></span></p>
+    <input id="otpInput" class="form-control mb-2" placeholder="Enter OTP">
+    <button class="btn btn-success w-100" onclick="verifyLoginOtp()">Verify OTP</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f4f6f9;
+    }
+
+    /* welcome popup */
+    #welcomePopup {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #198754;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 8px;
+      z-index: 9999;
+      display: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+
+
+    .dashboard-card {
+      border-radius: 12px;
+      border: none;
+    }
+
+    /* PDF Section */
+    .statutory-section {
+      padding: 80px 8%;
+      background: linear-gradient(120deg, #e0f7e6, #f5fbe9);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #0a3d62;
+      margin-bottom: 50px;
+    }
+
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .pdf-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(42, 39, 39, 0.08);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pdf-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, #0a3d62, #1e90ff);
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .pdf-card:hover::before {
+      opacity: 1;
+    }
+
+    .pdf-card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .pdf-icon {
+      font-size: 42px;
+      z-index: 2;
+      transition: transform 0.4s ease;
+    }
+
+    .pdf-card:hover .pdf-icon {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+    .pdf-content {
+      z-index: 2;
+    }
+
+    .pdf-content h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0a3d62;
+      margin-bottom: 5px;
+    }
+
+    .pdf-content p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .pdf-card:hover h4,
+    .pdf-card:hover p {
+      color: #fff;
+    }
+
+    .hover-opacity:hover {
+      opacity: 0.7;
+    }
+
+
+    footer {
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--  PAGE PROTECTION -->
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <!-- WELCOME POPUP -->
+  <div id="welcomePopup">
+    Welcome to My Dashboard 👋
+  </div>
+
+  <!-- DASHBOARD NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="img/bg-logo.png.png" height="40" class="hover-opacity">
+    </a>
+
+    <div class="ms-auto d-flex align-items-center gap-3">
+
+      <span class="text-muted" id="userEmail"></span>
+
+      <button class="btn btn-outline-danger btn-sm" onclick="logout()">Logout</button>
+    </div>
+
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+
+        <div class="card dashboard-card shadow mb-4">
+          <div class="card-body">
+
+            <h5 class="mb-3">Private Downloads</h5>
+
+            <!-- PDF Section -->
+            <section class="statutory-section">
+              <h6 class="mb-3">Statutory Disclosure</h6>
+
+              <div class="pdf-grid">
+                <a href="pdf/INFO1.pdf" class="pdf-card" target="_blank">
+                  <div class="pdf-icon">📄</div>
+                  <div class="pdf-content">
+                    <h4>Form MGT-7</h4>
+                    <p>FY 2024–25</p>
+                  </div>
+                </a>
+
+                <a href="pdf/INFO2.pdf" class="pdf-card" target="_blank">
+                  <div class="pdf-icon">📄</div>
+                  <div class="pdf-content">
+                    <h4>Annual Return</h4>
+                    <p>FY 2023–24</p>
+                  </div>
+                </a>
+
+                <a href="pdf/INFO3.pdf" class="pdf-card" target="_blank">
+                  <div class="pdf-icon">📄</div>
+                  <div class="pdf-content">
+                    <h4>Annual Return</h4>
+                    <p>FY 2022–23</p>
+                  </div>
+                </a>
+
+                <a href="pdf/INFO4.pdf" class="pdf-card" target="_blank">
+                  <div class="pdf-icon">📄</div>
+                  <div class="pdf-content">
+                    <h4>Annual Return</h4>
+                    <p>FY 2021–22</p>
+                  </div>
+                </a>
+
+                <a href="pdf/INFO5.pdf" class="pdf-card" target="_blank">
+                  <div class="pdf-icon">📄</div>
+                  <div class="pdf-content">
+                    <h4>Annual Return</h4>
+                    <p>FY 2020–21</p>
+                  </div>
+                </a>
+
+                <a href="pdf/bgrneo_brochure.pdf" class="pdf-card" target="_blank">
+                  <div class="pdf-icon">📄</div>
+                  <div class="pdf-content">
+                    <h4>BROCHURE</h4>
+                  </div>
+                </a>
+
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center mt-5 mb-3 text-muted">
+    © 2026 BGR NEO. All rights reserved.
+  </footer>
+
+  <script>
+    // show email
+    document.getElementById("userEmail").innerText =
+      localStorage.getItem("loggedUser");
+
+    // welcome popup show
+    const popup = document.getElementById("welcomePopup");
+    popup.style.display = "block";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 4000);
+
+    // logout with confirmation
+    function logout() {
+      const confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("loggedUser");
+        window.location.href = "login.html";
+      } else {
+        
+        return;
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>

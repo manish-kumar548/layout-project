@@ -1,0 +1,47 @@
+body {
+  padding-top: 90px; 
+  background: #f5f7fb;
+}
+
+.clients-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.clients-title {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+.client-logo {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.client-logo:nth-child(1) { animation-delay: 0.1s; }
+.client-logo:nth-child(2) { animation-delay: 0.2s; }
+.client-logo:nth-child(3) { animation-delay: 0.3s; }
+.client-logo:nth-child(4) { animation-delay: 0.4s; }
+.client-logo:nth-child(5) { animation-delay: 0.5s; }
+.client-logo:nth-child(6) { animation-delay: 0.6s; }
+
+.client-logo img {
+  max-width: 250px;
+  opacity: 0.85;
+  transition: all 0.4s ease;
+}
+
+.client-logo img:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
